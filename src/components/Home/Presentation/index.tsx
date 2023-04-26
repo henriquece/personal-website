@@ -33,7 +33,7 @@ export const Presentation = () => {
     <section className="pt-10 lg:pt-28">
       <SectionContainer>
         <div className="flex flex-col items-center lg:flex-row-reverse lg:justify-between">
-          <div className="w-fit border-[20px] border-black border-opacity-90 rounded-full lg:mr-16 lg:mb-16">
+          <div className="w-fit border-[20px] border-black border-opacity-90 rounded-full lg:mr-16">
             <Image
               src={profileImg}
               alt="Henrique's profile picture"
@@ -43,7 +43,7 @@ export const Presentation = () => {
           </div>
           <div className="flex flex-col items-center lg:items-start">
             <p className="mt-8 py-2 px-8 rounded-t-2xl rounded-ee-2xl bg-secondary text-white">
-              Hello, I am
+              Hello, I&apos;m
             </p>
             <h2 className="mt-5 text-white text-4xl font-semibold">
               Henrique Leite
@@ -62,7 +62,7 @@ export const Presentation = () => {
                 </li>
               ))}
             </ul>
-            <ul className="mt-4 flex gap-x-8 mb-[100px]">
+            <ul className="mt-4 flex gap-x-8">
               {socialMedias.map(({ icon: Icon, href }) => (
                 <li
                   key={href}

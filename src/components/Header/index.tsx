@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
 import Image from 'next/image'
-import logoImg from '../../../public/logo.png'
+import { FaBars } from 'react-icons/fa'
+import { useScrollListener } from '@/hooks/useScrollListener'
 import { SectionContainer } from '../commons/SectionContainer'
 import { Drawer } from '../commons/Drawer'
-import { FaBars } from 'react-icons/fa'
+import logoImg from '../../../public/logo.png'
 
 interface HeaderProps {
   isMobile: boolean
@@ -17,8 +18,8 @@ interface HeaderItem {
 const headerItems: HeaderItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Experiences', href: '#experiences' }
   // { label: 'Contact', href: '#contact' }
 ]
@@ -27,6 +28,8 @@ export const Header: FC<HeaderProps> = ({ isMobile }) => {
   const [activeSection, setActiveSection] = useState('#home')
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+  const { pageYOffset } = useScrollListener(10)
 
   const headerItemsList = (
     <ul className="flex flex-col pt-16 pl-5 gap-y-4 lg:flex-row lg:gap-x-10 lg:pt-0 lg:pl-0">
@@ -48,15 +51,14 @@ export const Header: FC<HeaderProps> = ({ isMobile }) => {
   )
 
   return (
-    <header className="bg-primary">
+    <header
+      className={`sticky top-0 duration-200 ${
+        pageYOffset < 92 ? 'bg-transparent' : 'bg-zinc-900'
+      }`}
+    >
       <SectionContainer>
-        <div className="flex justify-between items-center pt-4 lg:pt-0">
-          <Image
-            src={logoImg}
-            alt="Henrique.dev logo image"
-            height={60}
-            className="lg:mt-5"
-          />
+        <div className="flex justify-between items-center py-4">
+          <Image src={logoImg} alt="Henrique.dev logo image" height={50} />
           {isMobile ? (
             <>
               <FaBars

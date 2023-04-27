@@ -1,4 +1,3 @@
-import { SectionContainer } from '@/components/commons/SectionContainer'
 import Image from 'next/image'
 import { IconType } from 'react-icons'
 import {
@@ -7,6 +6,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt
 } from 'react-icons/fa'
+import { SectionContainer } from '@/components/commons/SectionContainer'
 import profileImg from '../../../../public/profile.jpg'
 
 const contacts: {

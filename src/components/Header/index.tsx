@@ -18,8 +18,8 @@ interface HeaderItem {
 const headerItems: HeaderItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Experiences', href: '#experiences' }
   // { label: 'Contact', href: '#contact' }
 ]

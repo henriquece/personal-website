@@ -1,5 +1,6 @@
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
+import { SkillChip } from '@/components/commons/SkillChip'
 
 interface SkillArea {
   title: string
@@ -16,7 +17,7 @@ const skillGroups: SkillGroup[] = [
     title: 'I have worked with:',
     skillAreas: [
       { title: 'Languages', items: ['JavaScript', 'TypeScript'] },
-      { title: 'Frameworks/Libs', items: ['ReactJS', 'Next.js'] },
+      { title: 'Frameworks/UI Libs', items: ['ReactJS', 'Next.js'] },
       { title: 'State Management', items: ['Redux', 'Mobx'] },
       {
         title: 'Styles',
@@ -90,12 +91,7 @@ export const Skills = () => {
                       </span>
                     )}
                     {skill.items.map((item) => (
-                      <span
-                        key={item}
-                        className="py-1 px-2 border border-secondary rounded text-white text-sm"
-                      >
-                        {item}
-                      </span>
+                      <SkillChip key={item} name={item} />
                     ))}
                   </li>
                 ))}

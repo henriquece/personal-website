@@ -3,6 +3,7 @@ import { Presentation } from '@/components/Home/Presentation'
 import { About } from '@/components/Home/About'
 import { PageProps } from './_app'
 import { Skills } from '@/components/Home/Skills'
+import { Portfolio } from '@/components/Home/Portfolio'
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -16,6 +17,7 @@ export default function Home({ isMobile }: PageProps) {
         <Presentation />
         <About isMobile={isMobile} />
         <Skills />
+        <Portfolio />
       </main>
     </>
   )

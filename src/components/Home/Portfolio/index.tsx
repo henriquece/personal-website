@@ -6,6 +6,7 @@ import chatImg from '../../../../public/project-chat.png'
 import { SkillChip } from '@/components/commons/SkillChip'
 import { Button } from '@/components/commons/Button'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import { HomeSection } from '@/pages'
 
 const projects = [
   {
@@ -29,7 +30,7 @@ const projects = [
 
 export const Portfolio = () => {
   return (
-    <section className="pt-20 md:pt-28">
+    <section className="pt-20 md:pt-28" id={'portfolio' as HomeSection}>
       <SectionContainer>
         <SectionTitle title="Portfolio" />
         <div className="mt-7 flex flex-col gap-6">

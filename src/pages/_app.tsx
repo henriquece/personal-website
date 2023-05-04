@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Header } from '@/components/Header'
 import { Footer } from '@/components/commons/Footer'
 import { useMobile } from '@/hooks/useMobile'
 
@@ -13,7 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Header isMobile={isMobile} />
       <Component {...pageProps} isMobile={isMobile} />
       <Footer />
     </>

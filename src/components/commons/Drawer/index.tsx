@@ -17,12 +17,12 @@ export const Drawer: FC<PropsWithChildren<DrawerProps>> = ({
   return (
     <>
       <div
-        className={`fixed left-0 top-0 h-full w-full flex bg-opacity-80 bg-black ${
+        className={`fixed left-0 top-0 h-full w-full flex bg-opacity-80 z-10 bg-black ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       />
       <div
-        className={`fixed left-0 top-0 h-full w-full flex duration-500 ${
+        className={`fixed left-0 top-0 h-full w-full flex duration-500 z-10 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

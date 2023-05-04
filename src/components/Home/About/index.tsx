@@ -1,5 +1,6 @@
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
+import { HomeSection } from '@/pages'
 import { FC } from 'react'
 import { FaLaptopCode } from 'react-icons/fa'
 
@@ -9,7 +10,7 @@ interface AboutProps {
 
 export const About: FC<AboutProps> = ({ isMobile }) => {
   return (
-    <section className="pt-20 lg:pt-28">
+    <section className="pt-20 lg:pt-28" id={'about' as HomeSection}>
       <SectionContainer>
         <div className="flex flex-col items-center lg:flex-row lg:justify-around">
           <FaLaptopCode

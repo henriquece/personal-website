@@ -5,15 +5,24 @@ import { PageProps } from './_app'
 import { Skills } from '@/components/Home/Skills'
 import { Portfolio } from '@/components/Home/Portfolio'
 import { Experiences } from '@/components/Home/Experiences'
+import { Header } from '@/components/Header'
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ['latin']
 })
 
+export type HomeSection =
+  | 'presentation'
+  | 'about'
+  | 'skills'
+  | 'portfolio'
+  | 'experiences'
+
 export default function Home({ isMobile }: PageProps) {
   return (
     <>
+      <Header isMobile={isMobile} />
       <main className={`${roboto.className} bg-primary`}>
         <Presentation />
         <About isMobile={isMobile} />

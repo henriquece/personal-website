@@ -1,7 +1,7 @@
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
+import { HomeSection } from '@/pages'
 import { FC } from 'react'
-import { FaLaptopCode } from 'react-icons/fa'
 
 interface ExperiencesProps {}
 
@@ -37,7 +37,7 @@ const experiences = [
 
 export const Experiences: FC<ExperiencesProps> = () => {
   return (
-    <section className="pt-20 lg:pt-28">
+    <section className="pt-20 lg:pt-28" id={'experiences' as HomeSection}>
       <SectionContainer>
         <SectionTitle title="Experiences" />
         <div className="mt-7 flex flex-col gap-6">

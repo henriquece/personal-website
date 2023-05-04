@@ -1,6 +1,7 @@
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
 import { SkillChip } from '@/components/commons/SkillChip'
+import { HomeSection } from '@/pages'
 
 interface SkillArea {
   title: string
@@ -70,7 +71,7 @@ const skillGroups: SkillGroup[] = [
 
 export const Skills = () => {
   return (
-    <section className="pt-20 lg:pt-28">
+    <section className="pt-20 lg:pt-28" id={'skills' as HomeSection}>
       <SectionContainer>
         <SectionTitle title="Skills" />
         <div className="mt-5 flex flex-col gap-10 lg:flex-row lg:justify-around">

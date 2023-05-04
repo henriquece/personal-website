@@ -29,16 +29,16 @@ const projects = [
 
 export const Portfolio = () => {
   return (
-    <section className="pt-20 lg:pt-28">
+    <section className="pt-20 md:pt-28">
       <SectionContainer>
         <SectionTitle title="Portfolio" />
         <div className="mt-7 flex flex-col gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
-              className={`h-[382px] flex flex-col rounded-lg bg-zinc-900 shadow-[-16px_0_48px_#000000] lg:h-auto lg:flex-row`}
+              className={`h-[382px] p-2 flex flex-col rounded-lg bg-zinc-900 shadow-card md:h-[210px] md:flex-row`}
             >
-              <div className="grow flex flex-col p-4 border-l border-primary">
+              <div className="grow flex flex-col pt-2 px-2 pb-4">
                 <h3 className="text-white text-xl font-semibold">
                   {project.title}
                 </h3>
@@ -55,7 +55,7 @@ export const Portfolio = () => {
                     ))}
                   </span>
                 </div>
-                <div className="flex justify-end gap-2 pt-4">
+                <div className="flex justify-end gap-2 pt-4 px-2">
                   <a href={project.githubHref} target="_blank">
                     <Button label="Code" icon={<FaGithub />} />
                   </a>
@@ -67,7 +67,7 @@ export const Portfolio = () => {
                 </div>
               </div>
               <div
-                className={`relative h-[140px] shrink-0 lg:h-[194px] lg:w-[316px]`}
+                className={`w-full self-center relative h-[140px] shrink-0 md:h-[194px] md:w-[316px]`}
               >
                 <Image
                   src={project.image}

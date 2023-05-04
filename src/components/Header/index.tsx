@@ -1,10 +1,12 @@
 import { FC, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { FaBars } from 'react-icons/fa'
 import { useScrollListener } from '@/hooks/useScrollListener'
 import { SectionContainer } from '../commons/SectionContainer'
 import { Drawer } from '../commons/Drawer'
 import logoImg from '../../../public/logo.png'
+import { isServer } from '@/utils/device'
 
 interface HeaderProps {
   isMobile: boolean
@@ -50,9 +52,15 @@ export const Header: FC<HeaderProps> = ({ isMobile }) => {
     </ul>
   )
 
+  const drawer = (
+    <Drawer isOpen={isDrawerOpen} closeDrawer={() => setIsDrawerOpen(false)}>
+      {headerItemsList}
+    </Drawer>
+  )
+
   return (
     <header
-      className={`sticky top-0 duration-200 ${
+      className={`sticky top-0 duration-200 z-10 ${
         pageYOffset < 92 ? 'bg-transparent' : 'bg-zinc-900'
       }`}
     >
@@ -66,12 +74,7 @@ export const Header: FC<HeaderProps> = ({ isMobile }) => {
                 onClick={() => setIsDrawerOpen(true)}
                 className="text-white lg:text-primary"
               />
-              <Drawer
-                isOpen={isDrawerOpen}
-                closeDrawer={() => setIsDrawerOpen(false)}
-              >
-                {headerItemsList}
-              </Drawer>
+              {isServer() ? drawer : createPortal(drawer, document.body)}
             </>
           ) : (
             headerItemsList

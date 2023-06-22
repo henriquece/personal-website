@@ -22,11 +22,18 @@ const skillGroups: SkillGroup[] = [
       { title: 'State Management', items: ['Redux', 'Mobx'] },
       {
         title: 'Styles',
-        items: ['CSS3', 'Sass', 'Styled-Components', 'Material UI']
+        items: [
+          'CSS3',
+          'Sass',
+          'Styled-Components',
+          'Material UI',
+          'Stitches',
+          'Radix'
+        ]
       },
       {
         title: 'Bundlers/Transpilers',
-        items: ['Webpack', 'Babel']
+        items: ['Webpack', 'Babel', 'Rollup']
       },
       {
         title: 'Tests',
@@ -48,21 +55,27 @@ const skillGroups: SkillGroup[] = [
   {
     title: 'I have studied and made projects with:',
     skillAreas: [
-      { title: 'Languages/Runtimes', items: ['Node.js', 'Python', 'C', 'VBA'] },
-      { title: 'Front-end Frameworks', items: ['Angular'] },
+      {
+        title: 'Languages/Runtimes',
+        items: ['Node.js', 'Python', 'Ruby', 'C', 'VBA']
+      },
+      {
+        title: 'Front-end Frameworks',
+        items: ['Vue.js', 'Nuxt.js', 'Angular']
+      },
       { title: 'Mobile Frameworks', items: ['React Native'] },
       {
         title: 'Back-end Frameworks',
-        items: ['Express.js', 'Django', 'Django REST']
+        items: ['Express.js', 'Django', 'Django REST', 'Ruby on Rails']
       },
-      { title: 'Styles', items: ['Bootstrap'] },
+      { title: 'Styles', items: ['TailwindCSS', 'Bootstrap'] },
       { title: 'Observability', items: ['Elastic APM'] },
       {
         title: 'Databases/ODM/ORM',
         items: ['PostgreSQL', 'MongoDB', 'Mongoose', 'MySQL', 'Sequelize']
       },
       { title: 'WebSocket', items: ['Socket.IO'] },
-      { title: 'Deploy', items: ['Heroku', 'AWS', 'GCP'] },
+      { title: 'Deploy', items: ['Heroku', 'AWS', 'GCP', 'Vercel'] },
       { title: 'Automation', items: ['Jenkins'] },
       { title: 'Other', items: ['PWA', 'Docker', 'Kubernetes', 'Rancher'] }
     ]

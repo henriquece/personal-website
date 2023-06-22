@@ -12,23 +12,28 @@ export const About: FC<AboutProps> = ({ isMobile }) => {
   return (
     <section className="pt-20 lg:pt-28" id={'about' as HomeSection}>
       <SectionContainer>
-        <div className="flex flex-col items-center lg:flex-row lg:justify-around">
+        <div className="flex flex-col items-center md:flex-row md:justify-around">
           <FaLaptopCode
             className="mb-4 text-secondary lg:mb-0"
             size={isMobile ? 120 : 180}
           />
           <div>
             <SectionTitle title="About Me" />
-            <p className="max-w-xs mt-5 text-white text-center font-light lg:max-w-lg lg:text-left">
-              I’m a Front-end developer, with more than 4 years of experience at
-              web applications development, using JavaScript, ReactJS, Next.js
-              and other libraries and tools. Currently, I’m Head of Front-end
-              development at Mobiauto and I keep looking for new challenges and
-              opportunities to grow. I’m passionate about creating solutions
-              that deliver value and improve customers&apos; experience.
-              I&apos;m also constantly looking to evolve and expand my
-              knowledge.
-            </p>
+            <div className="max-w-xs mt-5 text-white text-center font-light md:max-w-lg md:text-left">
+              <p>
+                I&apos;m a <b>Front-end Developer</b> with experience at web
+                applications development using <b>JavaScript</b>, <b>ReactJS</b>
+                , <b>Next.js</b> and other libraries and tools.
+              </p>
+              <p className="mt-4">
+                Currently, I&apos;m Senior Front-end Engineer at Seedz and I
+                keep looking for new challenges and opportunities to grow.
+              </p>
+              <p className="mt-4">
+                I&apos;m passionate about <b>building things</b> and{' '}
+                <b>solving problems</b> using <b>code</b>.
+              </p>
+            </div>
           </div>
         </div>
       </SectionContainer>

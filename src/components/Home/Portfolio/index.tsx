@@ -3,7 +3,7 @@ import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
 import personalWebsiteImg from '../../../../public/project-personal-website.png'
 import chatImg from '../../../../public/project-chat.png'
-import technewsVuejsImg from '../../../../public/project-technews-vuejs.png'
+import technewsImg from '../../../../public/project-technews.png'
 import chatMobileImg from '../../../../public/project-chat-mobile.png'
 import { SkillChip } from '@/components/commons/SkillChip'
 import { Button } from '@/components/commons/Button'
@@ -47,9 +47,18 @@ const frontendProjects = {
       description:
         'A Nuxt.js blog, which fetches articles from the HackerNews API.',
       skills: ['Vue.js', 'Nuxt.js'],
-      image: technewsVuejsImg,
+      image: technewsImg,
       href: 'https://technews-vuejs.vercel.app',
       githubHref: 'https://github.com/henriquece/technews-vuejs'
+    },
+    {
+      title: 'TechNews - Svelte',
+      description:
+        'A Svelte blog, which fetches articles from the HackerNews API.',
+      skills: ['Svelte', 'SvelteKit', 'Typescript'],
+      image: technewsImg,
+      href: 'https://technews-svelte.vercel.app',
+      githubHref: 'https://github.com/henriquece/technews-svelte'
     }
   ]
 }

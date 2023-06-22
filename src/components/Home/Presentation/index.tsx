@@ -33,8 +33,8 @@ export const Presentation = () => {
   return (
     <section className="pt-10 lg:pt-28" id={'presentation' as HomeSection}>
       <SectionContainer>
-        <div className="flex flex-col items-center lg:flex-row-reverse lg:justify-between">
-          <div className="w-fit border-[20px] border-black border-opacity-90 rounded-full lg:mr-16">
+        <div className="flex flex-col items-center md:flex-row-reverse md:justify-between">
+          <div className="w-fit border-[20px] border-black border-opacity-90 rounded-full md:mr-16">
             <Image
               src={profileImg}
               alt="Henrique's profile picture"

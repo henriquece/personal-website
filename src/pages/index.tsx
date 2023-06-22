@@ -6,6 +6,7 @@ import { Skills } from '@/components/Home/Skills'
 import { Portfolio } from '@/components/Home/Portfolio'
 import { Experiences } from '@/components/Home/Experiences'
 import { Header } from '@/components/Header'
+import Head from 'next/head'
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -22,6 +23,9 @@ export type HomeSection =
 export default function Home({ isMobile }: PageProps) {
   return (
     <>
+      <Head>
+        <title>Henrique Leite - Front-end Developer</title>
+      </Head>
       <Header isMobile={isMobile} />
       <main className={`${roboto.className} bg-primary`}>
         <Presentation />

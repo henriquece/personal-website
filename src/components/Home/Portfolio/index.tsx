@@ -14,14 +14,6 @@ const frontendProjects = {
   title: 'Front-end',
   items: [
     {
-      title: 'Personal Website',
-      description:
-        'A Next.js website, which shows my portfolio, skills and experiences.',
-      skills: ['Next.js', 'Typescript', 'TailwindCSS'],
-      image: personalWebsiteImg,
-      githubHref: 'https://github.com/henriquece/personal-website'
-    },
-    {
       title: 'Chat',
       description:
         'A ReactJS chat app built from scratch (no boilerplate, like CRA) with Sign In (Home), Sign Up and Chat pages, which communicates with the Node.js Chat API below.',
@@ -59,6 +51,23 @@ const frontendProjects = {
       image: technewsImg,
       href: 'https://technews-svelte.vercel.app',
       githubHref: 'https://github.com/henriquece/technews-svelte'
+    },
+    {
+      title: 'TechNews - Remix',
+      description:
+        'A Remix blog, which fetches articles from the HackerNews API.',
+      skills: ['Remix', 'ReactJS', 'Typescript'],
+      image: technewsImg,
+      href: 'https://technews-remix.vercel.app',
+      githubHref: 'https://github.com/henriquece/technews-remix'
+    },
+    {
+      title: 'Personal Website',
+      description:
+        'A Next.js website, which shows my portfolio, skills and experiences.',
+      skills: ['Next.js', 'Typescript', 'TailwindCSS'],
+      image: personalWebsiteImg,
+      githubHref: 'https://github.com/henriquece/personal-website'
     }
   ]
 }

@@ -16,7 +16,7 @@ import { Fragment } from 'react'
 
 interface Project {
   title: string
-  description: string
+  description?: string
   skills: string[]
   image?: StaticImageData
   href?: string
@@ -25,6 +25,7 @@ interface Project {
 
 interface FieldProjects {
   title: string
+  description?: string
   items: Project[]
 }
 
@@ -53,9 +54,23 @@ const frontendProjects: FieldProjects = {
       githubHref: 'https://github.com/henriquece/chat'
     },
     {
-      title: 'TechNews - Vue.js',
+      title: 'Personal Website',
       description:
-        'A Nuxt.js blog, which fetches articles from the HackerNews API.',
+        'A Next.js website, which shows my portfolio, skills and experiences.',
+      skills: ['Next.js', 'Typescript', 'TailwindCSS'],
+      image: personalWebsiteImg,
+      githubHref: 'https://github.com/henriquece/personal-website'
+    }
+  ]
+}
+
+const frontendTechNewsProjects: FieldProjects = {
+  title: 'Front-end - TechNews',
+  description:
+    'The same project implemented with various front-end frameworks/libs to study and compare them. All projects fetch articles from the HackerNews API.',
+  items: [
+    {
+      title: 'TechNews - Vue.js',
       skills: ['Vue.js', 'Nuxt.js'],
       image: technewsVuejsImg,
       href: 'https://technews-vuejs.vercel.app',
@@ -63,8 +78,6 @@ const frontendProjects: FieldProjects = {
     },
     {
       title: 'TechNews - Svelte',
-      description:
-        'A Svelte blog, which fetches articles from the HackerNews API.',
       skills: ['Svelte', 'SvelteKit', 'Typescript'],
       image: technewsSvelteImg,
       href: 'https://technews-svelte.vercel.app',
@@ -72,8 +85,6 @@ const frontendProjects: FieldProjects = {
     },
     {
       title: 'TechNews - Remix',
-      description:
-        'A Remix blog, which fetches articles from the HackerNews API.',
       skills: ['Remix', 'ReactJS', 'Typescript'],
       image: technewsRemixImg,
       href: 'https://technews-remix.vercel.app',
@@ -81,8 +92,6 @@ const frontendProjects: FieldProjects = {
     },
     {
       title: 'TechNews - Next.js',
-      description:
-        'A Next.js blog, which fetches articles from the HackerNews API.',
       skills: ['Next.js (App Router)', 'ReactJS', 'Typescript'],
       image: technewsNextjsImg,
       href: 'https://technews-nextjs.vercel.app/',
@@ -93,14 +102,6 @@ const frontendProjects: FieldProjects = {
       description: 'Web Components for the TechNews projects, using Stencil.',
       skills: ['Web Components', 'Stencil', 'Typescript'],
       githubHref: 'https://github.com/henriquece/technews-web-components'
-    },
-    {
-      title: 'Personal Website',
-      description:
-        'A Next.js website, which shows my portfolio, skills and experiences.',
-      skills: ['Next.js', 'Typescript', 'TailwindCSS'],
-      image: personalWebsiteImg,
-      githubHref: 'https://github.com/henriquece/personal-website'
     }
   ]
 }
@@ -134,7 +135,11 @@ const otherProjects: FieldProjects = {
   ]
 }
 
-const projectsGroups = [frontendProjects, otherProjects]
+const projectsGroups = [
+  frontendProjects,
+  frontendTechNewsProjects,
+  otherProjects
+]
 
 export const Portfolio = () => {
   return (
@@ -146,6 +151,11 @@ export const Portfolio = () => {
             <p className="mt-10 text-center underline underline-offset-2 text-white text-xl font-semibold">
               {group.title}
             </p>
+            {group.description && (
+              <p className="mt-4 text-white text-md font-normal">
+                {group.description}
+              </p>
+            )}
             <div className="mt-6 flex flex-col gap-6">
               {group.items.map((project) => (
                 <div

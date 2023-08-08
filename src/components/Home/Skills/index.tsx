@@ -61,7 +61,15 @@ const skillGroups: SkillGroup[] = [
       },
       {
         title: 'Front-end Frameworks/Libs',
-        items: ['Vue.js', 'Nuxt.js', 'Svelte', 'SvelteKit', 'Remix', 'Angular']
+        items: [
+          'Vue.js',
+          'Nuxt.js',
+          'Svelte',
+          'SvelteKit',
+          'Remix',
+          'Stencil',
+          'Angular'
+        ]
       },
       { title: 'Mobile Frameworks', items: ['React Native'] },
       {

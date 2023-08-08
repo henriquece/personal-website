@@ -1,16 +1,34 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
 import personalWebsiteImg from '../../../../public/project-personal-website.png'
 import chatImg from '../../../../public/project-chat.png'
-import technewsImg from '../../../../public/project-technews.png'
+import technewsVuejsImg from '../../../../public/project-technews-vuejs.png'
+import technewsSvelteImg from '../../../../public/project-technews-svelte.png'
+import technewsRemixImg from '../../../../public/project-technews-remix.png'
+import technewsNextjsImg from '../../../../public/project-technews-nextjs.png'
 import chatMobileImg from '../../../../public/project-chat-mobile.png'
 import { SkillChip } from '@/components/commons/SkillChip'
 import { Button } from '@/components/commons/Button'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { HomeSection } from '@/pages'
+import { Fragment } from 'react'
 
-const frontendProjects = {
+interface Project {
+  title: string
+  description: string
+  skills: string[]
+  image?: StaticImageData
+  href?: string
+  githubHref: string
+}
+
+interface FieldProjects {
+  title: string
+  items: Project[]
+}
+
+const frontendProjects: FieldProjects = {
   title: 'Front-end',
   items: [
     {
@@ -39,7 +57,7 @@ const frontendProjects = {
       description:
         'A Nuxt.js blog, which fetches articles from the HackerNews API.',
       skills: ['Vue.js', 'Nuxt.js'],
-      image: technewsImg,
+      image: technewsVuejsImg,
       href: 'https://technews-vuejs.vercel.app',
       githubHref: 'https://github.com/henriquece/technews-vuejs'
     },
@@ -48,7 +66,7 @@ const frontendProjects = {
       description:
         'A Svelte blog, which fetches articles from the HackerNews API.',
       skills: ['Svelte', 'SvelteKit', 'Typescript'],
-      image: technewsImg,
+      image: technewsSvelteImg,
       href: 'https://technews-svelte.vercel.app',
       githubHref: 'https://github.com/henriquece/technews-svelte'
     },
@@ -57,9 +75,24 @@ const frontendProjects = {
       description:
         'A Remix blog, which fetches articles from the HackerNews API.',
       skills: ['Remix', 'ReactJS', 'Typescript'],
-      image: technewsImg,
+      image: technewsRemixImg,
       href: 'https://technews-remix.vercel.app',
       githubHref: 'https://github.com/henriquece/technews-remix'
+    },
+    {
+      title: 'TechNews - Next.js',
+      description:
+        'A Next.js blog, which fetches articles from the HackerNews API.',
+      skills: ['Next.js (App Router)', 'ReactJS', 'Typescript'],
+      image: technewsNextjsImg,
+      href: 'https://technews-nextjs.vercel.app/',
+      githubHref: 'https://github.com/henriquece/technews-nextjs'
+    },
+    {
+      title: 'TechNews - Stencil',
+      description: 'Web Components for the TechNews projects, using Stencil.',
+      skills: ['Web Components', 'Stencil', 'Typescript'],
+      githubHref: 'https://github.com/henriquece/technews-web-components'
     },
     {
       title: 'Personal Website',
@@ -72,7 +105,7 @@ const frontendProjects = {
   ]
 }
 
-const otherProjects = {
+const otherProjects: FieldProjects = {
   title: 'Other',
   items: [
     {
@@ -88,8 +121,6 @@ const otherProjects = {
         'JWT',
         'Socket.IO'
       ],
-      image: chatImg,
-      href: 'https://api.henriquece.dev',
       githubHref: 'https://github.com/henriquece/chat-api'
     },
     {
@@ -111,11 +142,11 @@ export const Portfolio = () => {
       <SectionContainer>
         <SectionTitle title="Portfolio" />
         {projectsGroups.map((group) => (
-          <>
+          <Fragment key={group.title}>
             <p className="mt-10 text-center underline underline-offset-2 text-white text-xl font-semibold">
               {group.title}
             </p>
-            <div key={group.title} className="mt-6 flex flex-col gap-6">
+            <div className="mt-6 flex flex-col gap-6">
               {group.items.map((project) => (
                 <div
                   key={project.title}
@@ -139,30 +170,32 @@ export const Portfolio = () => {
                       </span>
                     </div>
                     <div className="flex justify-end gap-2 pt-4 px-2">
-                      <a href={project.githubHref} target="_blank">
-                        <Button label="Code" icon={<FaGithub />} />
-                      </a>
                       {project.href && (
                         <a href={project.href} target="_blank">
                           <Button label="Access" icon={<FaExternalLinkAlt />} />
                         </a>
                       )}
+                      <a href={project.githubHref} target="_blank">
+                        <Button label="Code" icon={<FaGithub />} />
+                      </a>
                     </div>
                   </div>
-                  <div
-                    className={`w-full self-center relative h-[140px] shrink-0 md:h-[216px] md:w-[316px]`}
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-top object-cover rounded-lg md:object-left"
-                    />
-                  </div>
+                  {project.image && (
+                    <div
+                      className={`w-full self-center relative h-[140px] shrink-0 md:h-[216px] md:w-[316px]`}
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-top object-cover rounded-lg md:object-left"
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-          </>
+          </Fragment>
         ))}
       </SectionContainer>
     </section>

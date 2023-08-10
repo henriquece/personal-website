@@ -2,7 +2,6 @@ import Image, { StaticImageData } from 'next/image'
 import { SectionContainer } from '@/components/commons/SectionContainer'
 import { SectionTitle } from '@/components/commons/SectionTitle'
 import personalWebsiteImg from '../../../../public/project-personal-website.png'
-import chatImg from '../../../../public/project-chat.png'
 import technewsVuejsImg from '../../../../public/project-technews-vuejs.png'
 import technewsSvelteImg from '../../../../public/project-technews-svelte.png'
 import technewsRemixImg from '../../../../public/project-technews-remix.png'
@@ -19,6 +18,7 @@ interface Project {
   description?: string
   skills: string[]
   image?: StaticImageData
+  youtubeVideoId?: string
   href?: string
   githubHref: string
 }
@@ -49,7 +49,7 @@ const frontendProjects: FieldProjects = {
         'Cypress',
         'Github Actions'
       ],
-      image: chatImg,
+      youtubeVideoId: 'qa7XDyFHm8U',
       href: 'https://henriquece-chat.vercel.app',
       githubHref: 'https://github.com/henriquece/chat'
     },
@@ -190,16 +190,27 @@ export const Portfolio = () => {
                       </a>
                     </div>
                   </div>
-                  {project.image && (
+                  {(project.image || project.youtubeVideoId) && (
                     <div
                       className={`w-full self-center relative h-[140px] shrink-0 md:h-[216px] md:w-[316px]`}
                     >
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-top object-cover rounded-lg md:object-left"
-                      />
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-top object-cover rounded-lg md:object-left"
+                        />
+                      ) : (
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://www.youtube.com/embed/${project.youtubeVideoId}`}
+                          title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        ></iframe>
+                      )}
                     </div>
                   )}
                 </div>

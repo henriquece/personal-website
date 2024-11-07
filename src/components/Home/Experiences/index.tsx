@@ -5,8 +5,16 @@ import { HomeSection } from '@/pages'
 const experiences = [
   {
     position: 'Senior Front-end Engineer',
+    company: 'Aarin Tech-fin',
+    date: 'Sep 2023 - present',
+    description: [
+      'Development of financial products’ front-end, using ReactJS, Next.js, Typescript, Material UI, React Query and other libraries.'
+    ]
+  },
+  {
+    position: 'Senior Front-end Engineer',
     company: 'Seedz',
-    date: 'Feb 2023 - present',
+    date: 'Feb 2023 - Sep 2023',
     description: [
       'Research and development of the new front-end project for the company’s ERP product, including the tools, libraries and the architecture. The project is developed with ReactJS, Rollup, Stitches, Radix, Storybook and other libraries.'
     ]
@@ -18,7 +26,7 @@ const experiences = [
     description: [
       'Coordination of front-end team and front-end projects.',
       'Coordination of recruitment process.',
-      'Development of better technical practices.'
+      'Development of better technical practices, like automated tests and observability.'
     ]
   },
   {

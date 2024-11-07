@@ -19,7 +19,7 @@ const skillGroups: SkillGroup[] = [
     skillAreas: [
       { title: 'Languages', items: ['JavaScript', 'TypeScript'] },
       { title: 'Frameworks/UI Libs', items: ['ReactJS', 'Next.js'] },
-      { title: 'State Management', items: ['Redux', 'Mobx'] },
+      { title: 'State Management', items: ['Redux', 'Mobx', 'React Query'] },
       {
         title: 'Styles',
         items: [
@@ -28,9 +28,11 @@ const skillGroups: SkillGroup[] = [
           'Styled-Components',
           'Material UI',
           'Stitches',
-          'Radix'
+          'Radix',
+          'PandaCSS'
         ]
       },
+      { title: 'Observability', items: ['Sentry', 'Datadog'] },
       {
         title: 'Bundlers/Transpilers',
         items: ['Webpack', 'Babel', 'Rollup']
@@ -68,7 +70,9 @@ const skillGroups: SkillGroup[] = [
           'SvelteKit',
           'Remix',
           'Stencil',
-          'Angular'
+          'Angular',
+          'Astro',
+          'HTMX'
         ]
       },
       { title: 'Mobile Frameworks', items: ['React Native'] },

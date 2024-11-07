@@ -26,8 +26,7 @@ export const About: FC<AboutProps> = ({ isMobile }) => {
                 , <b>Next.js</b> and other libraries and tools.
               </p>
               <p className="mt-4">
-                Currently, I&apos;m Senior Front-end Engineer at Seedz and I
-                keep looking for new challenges and opportunities to grow.
+                Currently, I&apos;m Senior Front-end Engineer at Aarin.
               </p>
               <p className="mt-4">
                 I&apos;m passionate about <b>building things</b> and{' '}
